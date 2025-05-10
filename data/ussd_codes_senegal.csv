@@ -1,4 +1,7 @@
 Opérateur,Pays,Service,Code USSD,Syntaxe,Description,Statut,Dernière mise à jour
+Orange,Sénégal,Solde de crédit,#123#,N/A,Consulter le solde de crédit,Actif,2025-05-10
+Orange,Sénégal,Connaître son numéro,#237#,N/A,Affiche votre numéro de téléphone,Actif,2025-05-10
+Orange,Sénégal,Achat de pass Internet,#1234#,N/A,Achat de forfaits Internet,Actif,2025-05-10
 Orange,Sénégal,Menu principal,#144#,N/A,Accès aux services Orange Money,Actif,2025-05-09
 Orange,Sénégal,Solde Orange Money,#144#1#,N/A,Solde de vos comptes Orange Money,Actif,2025-05-09
 Orange,Sénégal,Envoyer de l'argent,#144#2#,N/A,Envoyer de l'argent via Orange Money,Actif,2025-05-09
