@@ -9,7 +9,9 @@ Orange,Sénégal,Paiement de factures,#144#3#,N/A,Payez vos factures via Orange 
 Orange,Sénégal,Rechargement Woyofal,#144#342#,N/A,Rechargement compteur prépayé,Actif,2025-05-09
 Orange,Sénégal,Canal+ abonnement,#144#3*5*1#,N/A,Reconduction abonnement Canal+,Actif,2025-05-09
 Orange,Sénégal,Canal+ régularisation,#144#3*5*2#,N/A,Paiement régularisation Canal+,Actif,2025-05-09
+Orange,Sénégal,Envoyer de l'argent (transfert national) ,#144#211*num-telephone*montant#,N/A,Envoyer de l'argent via Orange Money (transfert national),Actif,2025-05-10
 Free,Sénégal,Menu principal,#150#,N/A,Accès aux services Free Money,Actif,2025-05-09
 Free,Sénégal,Achat de crédit Free,#172#,N/A,Acheter du crédit Free,Actif,2025-05-09
 Free,Sénégal,Solde crédit Free,#176#,N/A,Vérifier le solde de votre crédit,Actif,2025-05-09
 Wave,Sénégal,Menu principal (via Orange/Free),#2171#,N/A,Accès Wave via Orange / Free,Actif,2025-05-09
+
