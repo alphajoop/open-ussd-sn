@@ -1,19 +1,18 @@
-
-import { Moon, Sun, Laptop } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Moon, Sun, Laptop } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useTheme } from "@/components/ThemeProvider";
-import { useTranslation } from "react-i18next";
+} from '@/components/ui/dropdown-menu';
+import { useTheme } from '@/components/ThemeProvider';
+import { useTranslation } from 'react-i18next';
 
 export function ThemeToggle() {
   const { setTheme } = useTheme();
   const { t } = useTranslation();
-  
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -24,17 +23,17 @@ export function ThemeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
+        <DropdownMenuItem onClick={() => setTheme('light')}>
           <Sun className="mr-2 h-4 w-4" />
-          <span>{t("common.theme.light")}</span>
+          <span>{t('common.theme.light')}</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
+        <DropdownMenuItem onClick={() => setTheme('dark')}>
           <Moon className="mr-2 h-4 w-4" />
-          <span>{t("common.theme.dark")}</span>
+          <span>{t('common.theme.dark')}</span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
+        <DropdownMenuItem onClick={() => setTheme('system')}>
           <Laptop className="mr-2 h-4 w-4" />
-          <span>{t("common.theme.system")}</span>
+          <span>{t('common.theme.system')}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -34,14 +34,14 @@ export async function loadUssdCodes(): Promise<UssdCode[]> {
             syntaxe: row['Syntaxe'],
             description: row['Description'],
             statut: row['Statut'],
-            derniereMiseAJour: row['Dernière mise à jour']
+            derniereMiseAJour: row['Dernière mise à jour'],
           }));
           ussdCodesCache = data;
           resolve(data);
         },
         error: (error) => {
           reject(error);
-        }
+        },
       });
     });
   } catch (error) {

@@ -1,4 +1,3 @@
-
 export interface UssdData {
   operateur: string;
   pays: string;

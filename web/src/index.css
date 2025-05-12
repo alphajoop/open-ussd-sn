@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,5 +94,5 @@
 }
 
 .highlight-row {
-  @apply bg-orange-100 dark:bg-orange-900/20 transition-colors;
+  @apply bg-orange-100 transition-colors dark:bg-orange-900/20;
 }

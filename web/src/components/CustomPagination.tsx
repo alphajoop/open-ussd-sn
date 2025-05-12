@@ -1,5 +1,4 @@
-
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 import {
   Pagination,
   PaginationContent,
@@ -8,7 +7,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination";
+} from '@/components/ui/pagination';
 
 interface PaginationProps {
   currentPage: number;
@@ -78,13 +77,17 @@ const CustomPagination: React.FC<PaginationProps> = ({
         <PaginationItem>
           <PaginationPrevious
             onClick={() => onPageChange(Math.max(1, currentPage - 1))}
-            className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+            className={
+              currentPage === 1
+                ? 'pointer-events-none opacity-50'
+                : 'cursor-pointer'
+            }
           >
-            {t("common.pagination.previous")}
+            {t('common.pagination.previous')}
           </PaginationPrevious>
         </PaginationItem>
 
-        {getPageNumbers().map((pageNum, index) => (
+        {getPageNumbers().map((pageNum, index) =>
           pageNum < 0 ? (
             <PaginationItem key={`ellipsis-${pageNum}-${index}`}>
               <PaginationEllipsis />
@@ -92,21 +95,25 @@ const CustomPagination: React.FC<PaginationProps> = ({
           ) : (
             <PaginationItem key={`page-${pageNum}`}>
               <PaginationLink
-                className={`cursor-pointer ${currentPage === pageNum ? "bg-primary text-primary-foreground" : ""}`}
+                className={`cursor-pointer ${currentPage === pageNum ? 'bg-primary text-primary-foreground' : ''}`}
                 onClick={() => onPageChange(pageNum)}
               >
                 {pageNum}
               </PaginationLink>
             </PaginationItem>
-          )
-        ))}
+          ),
+        )}
 
         <PaginationItem>
           <PaginationNext
             onClick={() => onPageChange(Math.min(totalPages, currentPage + 1))}
-            className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+            className={
+              currentPage === totalPages
+                ? 'pointer-events-none opacity-50'
+                : 'cursor-pointer'
+            }
           >
-            {t("common.pagination.next")}
+            {t('common.pagination.next')}
           </PaginationNext>
         </PaginationItem>
       </PaginationContent>

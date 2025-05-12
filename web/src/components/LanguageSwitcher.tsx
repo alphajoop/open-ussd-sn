@@ -1,13 +1,12 @@
-
-import { Button } from "@/components/ui/button";
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useTranslation } from "react-i18next";
-import { Globe } from "lucide-react";
+} from '@/components/ui/dropdown-menu';
+import { useTranslation } from 'react-i18next';
+import { Globe } from 'lucide-react';
 
 export default function LanguageSwitcher() {
   const { i18n } = useTranslation();
@@ -26,11 +25,15 @@ export default function LanguageSwitcher() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => changeLanguage("fr")}>
-          <span className={i18n.language === 'fr' ? 'font-bold' : ''}>Français</span>
+        <DropdownMenuItem onClick={() => changeLanguage('fr')}>
+          <span className={i18n.language === 'fr' ? 'font-bold' : ''}>
+            Français
+          </span>
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => changeLanguage("en")}>
-          <span className={i18n.language === 'en' ? 'font-bold' : ''}>English</span>
+        <DropdownMenuItem onClick={() => changeLanguage('en')}>
+          <span className={i18n.language === 'en' ? 'font-bold' : ''}>
+            English
+          </span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,20 +1,20 @@
-import React, { useState, useMemo, useEffect } from "react";
-import FilterBar from "@/components/FilterBar";
-import UssdTable from "@/components/UssdTable";
-import MobileDetail from "@/components/MobileDetail";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Info } from "lucide-react";
-import Header from "@/components/Header";
-import { useToast } from "@/hooks/use-toast";
-import { useTranslation } from "react-i18next";
-import CustomPagination from "@/components/CustomPagination";
-import { loadUssdCodes, UssdCode } from "@/data/ussdCodesLoader";
+import React, { useState, useMemo, useEffect } from 'react';
+import FilterBar from '@/components/FilterBar';
+import UssdTable from '@/components/UssdTable';
+import MobileDetail from '@/components/MobileDetail';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Info } from 'lucide-react';
+import Header from '@/components/Header';
+import { useToast } from '@/hooks/use-toast';
+import { useTranslation } from 'react-i18next';
+import CustomPagination from '@/components/CustomPagination';
+import { loadUssdCodes, UssdCode } from '@/data/ussdCodesLoader';
 
 const Index = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedOperateur, setSelectedOperateur] = useState("all");
-  const [selectedPays, setSelectedPays] = useState("all");
+  const [searchQuery, setSearchQuery] = useState('');
+  const [selectedOperateur, setSelectedOperateur] = useState('all');
+  const [selectedPays, setSelectedPays] = useState('all');
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [ussdCodesData, setUssdCodesData] = useState<UssdCode[]>([]);
@@ -32,9 +32,9 @@ const Index = () => {
       } catch (error) {
         console.error('Error loading USSD codes:', error);
         toast({
-          title: t("common.error"),
-          description: t("common.loadingError"),
-          variant: "destructive",
+          title: t('common.error'),
+          description: t('common.loadingError'),
+          variant: 'destructive',
         });
       } finally {
         setIsLoading(false);
@@ -47,15 +47,15 @@ const Index = () => {
   const filteredData = useMemo(() => {
     return ussdCodesData.filter((item) => {
       const matchesQuery =
-        searchQuery === "" ||
+        searchQuery === '' ||
         item.service.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
         item.codeUssd.toLowerCase().includes(searchQuery.toLowerCase());
 
       const matchesOperateur =
-        selectedOperateur === "all" || item.operateur === selectedOperateur;
+        selectedOperateur === 'all' || item.operateur === selectedOperateur;
 
-      const matchesPays = selectedPays === "all" || item.pays === selectedPays;
+      const matchesPays = selectedPays === 'all' || item.pays === selectedPays;
 
       return matchesQuery && matchesOperateur && matchesPays;
     });
@@ -70,14 +70,18 @@ const Index = () => {
 
   const selectedCodeDetails = useMemo(() => {
     if (!selectedCode) return null;
-    return filteredData.find((item) => `${item.operateur}-${item.codeUssd}` === selectedCode) || null;
+    return (
+      filteredData.find(
+        (item) => `${item.operateur}-${item.codeUssd}` === selectedCode,
+      ) || null
+    );
   }, [filteredData, selectedCode]);
 
   const copyToClipboard = (code: string) => {
     navigator.clipboard.writeText(code);
     toast({
-      title: t("common.copied"),
-      description: t("common.codeCopied", { code }),
+      title: t('common.copied'),
+      description: t('common.codeCopied', { code }),
       duration: 2000,
     });
   };
@@ -94,16 +98,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="flex min-h-screen flex-col">
       <Header />
 
-      <main className="container py-6 flex-1">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold">{t("common.title")}</h2>
+      <main className="container flex-1 py-6">
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-2xl font-bold">{t('common.title')}</h2>
           <Link to="/infos">
-            <Button variant="outline" size="sm" className="flex items-center gap-1">
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-1"
+            >
               <Info className="h-4 w-4" />
-              <span>{t("common.info")}</span>
+              <span>{t('common.info')}</span>
             </Button>
           </Link>
         </div>
@@ -131,14 +139,12 @@ const Index = () => {
           />
         )}
 
-        {selectedCodeDetails && (
-          <MobileDetail data={selectedCodeDetails} />
-        )}
+        {selectedCodeDetails && <MobileDetail data={selectedCodeDetails} />}
       </main>
 
       <footer className="border-t py-4 text-center text-sm text-muted-foreground">
         <div className="container">
-          {t("common.copyright", { year: new Date().getFullYear() })}
+          {t('common.copyright', { year: new Date().getFullYear() })}
         </div>
       </footer>
     </div>
