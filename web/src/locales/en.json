@@ -1,0 +1,33 @@
+
+{
+  "common": {
+    "title": "USSD Codes Senegal",
+    "info": "Info",
+    "search": "Search",
+    "operator": "Operator",
+    "allOperators": "All operators",
+    "country": "Country",
+    "allCountries": "All countries",
+    "service": "Service",
+    "code": "USSD Code",
+    "description": "Description",
+    "status": "Status",
+    "lastUpdate": "Last update",
+    "active": "Active",
+    "inactive": "Inactive",
+    "noResults": "No results found",
+    "copyright": "© {{year}} USSD Senegal - All rights reserved",
+    "pagination": {
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page"
+    },
+    "theme": {
+      "light": "Light",
+      "dark": "Dark",
+      "system": "System"
+    },
+    "copied": "Code copied!",
+    "codeCopied": "The code {{code}} has been copied to clipboard."
+  }
+}

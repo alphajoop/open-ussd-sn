@@ -1,0 +1,33 @@
+
+{
+  "common": {
+    "title": "Codes USSD Sénégal",
+    "info": "Infos",
+    "search": "Recherche",
+    "operator": "Opérateur",
+    "allOperators": "Tous les opérateurs",
+    "country": "Pays",
+    "allCountries": "Tous les pays",
+    "service": "Service",
+    "code": "Code USSD",
+    "description": "Description",
+    "status": "Statut",
+    "lastUpdate": "Dernière maj",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "noResults": "Aucun résultat trouvé",
+    "copyright": "© {{year}} USSD Sénégal - Tous droits réservés",
+    "pagination": {
+      "previous": "Précédent",
+      "next": "Suivant",
+      "page": "Page"
+    },
+    "theme": {
+      "light": "Clair",
+      "dark": "Sombre",
+      "system": "Système"
+    },
+    "copied": "Code copié !",
+    "codeCopied": "Le code {{code}} a été copié dans le presse-papier."
+  }
+}
