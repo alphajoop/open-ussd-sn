@@ -53,6 +53,7 @@ const UssdTable: React.FC<UssdTableProps> = ({
         </TableCaption>
         <TableHeader>
           <TableRow>
+            <TableHead className="w-[50px]">{t('common.logo')}</TableHead>
             <TableHead className="w-[100px]">{t('common.operator')}</TableHead>
             <TableHead className="w-[100px]">{t('common.country')}</TableHead>
             <TableHead>{t('common.service')}</TableHead>
@@ -71,7 +72,7 @@ const UssdTable: React.FC<UssdTableProps> = ({
         <TableBody>
           {paginatedData.length === 0 ? (
             <TableRow>
-              <TableCell colSpan={7} className="py-10 text-center">
+              <TableCell colSpan={8} className="py-10 text-center">
                 {t('common.noResults')}
               </TableCell>
             </TableRow>
@@ -89,10 +90,17 @@ const UssdTable: React.FC<UssdTableProps> = ({
                 }
               >
                 <TableCell>
+                  <img
+                    src={item.logo}
+                    alt={`${item.operateur} logo`}
+                    className="h-8 w-8 rounded-full object-cover "
+                  />
+                </TableCell>
+                <TableCell>
                   <div className="flex items-center gap-2">
-                    <span
+                    {/* <span
                       className={`h-3 w-3 rounded-full ${getOperateurColor(item.operateur)}`}
-                    ></span>
+                    ></span> */}
                     {item.operateur}
                   </div>
                 </TableCell>

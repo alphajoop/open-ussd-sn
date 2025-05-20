@@ -2,6 +2,7 @@ import { UssdData } from '../types/UssdData';
 
 export const ussdCodesData: UssdData[] = [
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Solde de crédit',
@@ -12,6 +13,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-10',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Connaître son numéro',
@@ -22,6 +24,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-10',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Achat de pass Internet',
@@ -32,6 +35,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-10',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Menu principal',
@@ -42,6 +46,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Solde Orange Money',
@@ -52,6 +57,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: "Envoyer de l'argent",
@@ -62,6 +68,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Paiement de factures',
@@ -72,6 +79,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Rechargement Woyofal',
@@ -82,6 +90,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Canal+ abonnement',
@@ -92,6 +101,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Canal+ régularisation',
@@ -102,6 +112,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: "Envoyer de l'argent (transfert national)",
@@ -112,6 +123,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-10',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Achat Illimix',
@@ -122,6 +134,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-11',
   },
   {
+    logo: 'Free',
     operateur: 'Free',
     pays: 'Sénégal',
     service: 'Menu principal',
@@ -132,6 +145,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'Free',
     operateur: 'Free',
     pays: 'Sénégal',
     service: 'Achat de crédit Free',
@@ -142,6 +156,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'Free',
     operateur: 'Free',
     pays: 'Sénégal',
     service: 'Solde crédit Free',
@@ -152,6 +167,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'Wave',
     operateur: 'Wave',
     pays: 'Sénégal',
     service: 'Menu principal (via Orange/Free)',
@@ -162,6 +178,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-09',
   },
   {
+    logo: 'orange',
     operateur: 'Orange',
     pays: 'Sénégal',
     service: 'Consulter le coût et la durée du dernier appel émis',
@@ -172,6 +189,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-11',
   },
   {
+    logo: 'Expresso',
     operateur: 'Expresso',
     pays: 'Sénégal',
     service: 'Solde crédit et Internet',
@@ -182,6 +200,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-11',
   },
   {
+    logo: 'Expresso',
     operateur: 'Expresso',
     pays: 'Sénégal',
     service: 'Achat de pass Internet',
@@ -192,6 +211,7 @@ export const ussdCodesData: UssdData[] = [
     derniereMiseAJour: '2025-05-11',
   },
   {
+    logo: 'Expresso',
     operateur: 'Expresso',
     pays: 'Sénégal',
     service: 'Portail expresso',
