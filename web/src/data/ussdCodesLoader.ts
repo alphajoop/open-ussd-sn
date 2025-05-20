@@ -1,6 +1,7 @@
 import Papa from 'papaparse';
 
 export interface UssdCode {
+  logo: string;
   operateur: string;
   pays: string;
   service: string;
@@ -27,6 +28,7 @@ export async function loadUssdCodes(): Promise<UssdCode[]> {
         header: true,
         complete: (results) => {
           const data = results.data.map((row: any) => ({
+            logo: row['Logo'],
             operateur: row['Opérateur'],
             pays: row['Pays'],
             service: row['Service'],

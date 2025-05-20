@@ -1,4 +1,5 @@
 export interface UssdData {
+  logo: string;
   operateur: string;
   pays: string;
   service: string;

@@ -1,22 +1,22 @@
-Opérateur,Pays,Service,Code USSD,Syntaxe,Description,Statut,Dernière mise à jour
-Orange,Sénégal,Solde de crédit,#123#,N/A,Consulter le solde de crédit,Actif,2025-05-10
-Orange,Sénégal,Connaître son numéro,#237#,N/A,Affiche votre numéro de téléphone,Actif,2025-05-10
-Orange,Sénégal,Achat de pass Internet,#1234#,N/A,Achat de forfaits Internet,Actif,2025-05-10
-Orange,Sénégal,Menu principal,#144#,N/A,Accès aux services Orange Money,Actif,2025-05-09
-Orange,Sénégal,Solde Orange Money,#144#1#,N/A,Solde de vos comptes Orange Money,Actif,2025-05-09
-Orange,Sénégal,Envoyer de l'argent,#144#2#,N/A,Envoyer de l'argent via Orange Money,Actif,2025-05-09
-Orange,Sénégal,Paiement de factures,#144#3#,N/A,Payez vos factures via Orange Money,Actif,2025-05-09
-Orange,Sénégal,Rechargement Woyofal,#144#342#,N/A,Rechargement compteur prépayé,Actif,2025-05-09
-Orange,Sénégal,Canal+ abonnement,#144#3*5*1#,N/A,Reconduction abonnement Canal+,Actif,2025-05-09
-Orange,Sénégal,Canal+ régularisation,#144#3*5*2#,N/A,Paiement régularisation Canal+,Actif,2025-05-09
-Orange,Sénégal,Envoyer de l'argent (transfert national),#144#211*num-telephone*montant#,N/A,Envoyer de l'argent via Orange Money (transfert national),Actif,2025-05-10
-Orange,Sénégal,Achat Illimix,#250#,N/A,Acheter un Illimix (Jour/ Semaine/ Mois),Actif,2025-05-11
-Free,Sénégal,Menu principal,#150#,N/A,Accès aux services Free Money,Actif,2025-05-09
-Free,Sénégal,Achat de crédit Free,#172#,N/A,Acheter du crédit Free,Actif,2025-05-09
-Free,Sénégal,Solde crédit Free,#176#,N/A,Vérifier le solde de votre crédit,Actif,2025-05-09
-Wave,Sénégal,Menu principal (via Orange/Free),#2171#,N/A,Accès Wave via Orange / Free,Actif,2025-05-09
-Orange,Sénégal,Consulter le coût et la durée du dernier appel émis,#123##,N/A,Affiche le coût et la durée du dernier appel émis,Actif,2025-05-11
-Expresso,Sénégal,Solde crédit et Internet,*222#,N/A,Consulter le solde de crédit et internet,Actif,2025-05-11
-Expresso,Sénégal,Achat de pass Internet,*5#,N/A,Achat de forfaits Internet,Actif,2025-05-11
-Expresso,Sénégal,Portail expresso,*1111#,N/A,Portail un peu généraliste (Internet/ Programme de fidélité - teral/ Activer promo...),Actif,2025-05-11
-Expresso,Sénégal,Transfert de bonus,*9*montant*numero_beneficiaire*code_secret#,N/A,Transfére de bonus vers un autre numéro expresso,Actif,2025-05-11
+Logo,Opérateur,Pays,Service,Code USSD,Syntaxe,Description,Statut,Dernière mise à jour
+web\src\assets\svg\orange_logo.svg,Orange,Sénégal,Solde de crédit,#123#,N/A,Consulter le solde de crédit,Actif,2025-05-10
+web\src\assets\svg\orange_logo.svg,Orange,Sénégal,Connaître son numéro,#237#,N/A,Affiche votre numéro de téléphone,Actif,2025-05-10
+web\src\assets\svg\orange_logo.svg,Orange,Sénégal,Achat de pass Internet,#1234#,N/A,Achat de forfaits Internet,Actif,2025-05-10
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Menu principal Orange Money,#144#,N/A,Accès aux services Orange Money,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Solde Orange Money,#144#1#,N/A,Solde de vos comptes Orange Money,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Envoyer de l'argent,#144#2#,N/A,Envoyer de l'argent via Orange Money,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Paiement de factures,#144#3#,N/A,Payez vos factures via Orange Money,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Rechargement Woyofal,#144#342#,N/A,Rechargement compteur prépayé,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Canal+ abonnement,#144#3*5*1#,N/A,Reconduction abonnement Canal+,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Canal+ régularisation,#144#3*5*2#,N/A,Paiement régularisation Canal+,Actif,2025-05-09
+web\src\assets\svg\orange-money.png,Orange,Sénégal,Envoyer de l'argent (transfert national),#144#211*num-telephone*montant#,N/A,Envoyer de l'argent via Orange Money (transfert national),Actif,2025-05-10
+web\src\assets\svg\orange_logo.svg,Orange,Sénégal,Achat Illimix,#250#,N/A,Acheter un Illimix (Jour/ Semaine/ Mois),Actif,2025-05-11
+web\src\assets\svg\mix-by-yass.svg,Free,Sénégal,Menu principal,#150#,N/A,Accès aux services Free Money,Actif,2025-05-09
+web\src\assets\svg\mix-by-yass.svg,Free,Sénégal,Achat de crédit Free,#172#,N/A,Acheter du crédit Free,Actif,2025-05-09
+web\src\assets\svg\mix-by-yass.svg,Free,Sénégal,Solde crédit Free,#176#,N/A,Vérifier le solde de votre crédit,Actif,2025-05-09
+web\src\assets\svg\wave.png,Wave,Sénégal,Menu principal (via Orange/Free),#2171#,N/A,Accès Wave via Orange / Free,Actif,2025-05-09
+web\src\assets\svg\orange_logo.svg,Orange,Sénégal,Consulter le coût et la durée du dernier appel émis,#123##,N/A,Affiche le coût et la durée du dernier appel émis,Actif,2025-05-11
+web\src\assets\svg\expresso.png,Expresso,Sénégal,Solde crédit et Internet,*222#,N/A,Consulter le solde de crédit et internet,Actif,2025-05-11
+web\src\assets\svg\expresso.png,Expresso,Sénégal,Achat de pass Internet,*5#,N/A,Achat de forfaits Internet,Actif,2025-05-11
+web\src\assets\svg\expresso.png,Expresso,Sénégal,Portail expresso,*1111#,N/A,Portail un peu généraliste (Internet/ Programme de fidélité - teral/ Activer promo...),Actif,2025-05-11
+web\src\assets\svg\expresso.png,Expresso,Sénégal,Transfert de bonus,*9*montant*numero_beneficiaire*code_secret#,N/A,Transfére de bonus vers un autre numéro expresso,Actif,2025-05-11
