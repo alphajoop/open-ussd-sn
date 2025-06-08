@@ -1,5 +1,3 @@
-'use client';
-
 import { useState } from 'react';
 import { useUssdCodes } from '@/hooks/useUssdCodes';
 import {
@@ -20,6 +18,18 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Loader2, Search, Phone, Info, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
+
+// Types pour les opérateurs
+const OPERATOR_NAMES = ['Orange', 'Free', 'Expresso', 'Wave'] as const;
+type OperatorName = (typeof OPERATOR_NAMES)[number];
+
+// Map des logos d'opérateurs
+const operatorLogos: Record<OperatorName, string> = {
+  Orange: '/images/operators/orange-logo.png',
+  Free: '/images/operators/yas-logo.jpg',
+  Expresso: '/images/operators/expresso-logo.jpg',
+  Wave: '/images/operators/wave-logo.png',
+};
 
 export function UssdAccordionList() {
   const { data, loading, error } = useUssdCodes();
@@ -76,6 +86,30 @@ export function UssdAccordionList() {
     );
   };
 
+  // Render placeholder operator logo when actual logo is not available
+  const renderOperatorLogo = (operator: string) => {
+    // Vérifier si l'opérateur est une clé valide
+    const validOperator = OPERATOR_NAMES.includes(operator as OperatorName);
+
+    if (validOperator && operatorLogos[operator as OperatorName]) {
+      return (
+        <img
+          src={operatorLogos[operator as OperatorName]}
+          alt={`Logo ${operator}`}
+          className="mr-2 h-8 w-8 rounded-full object-cover"
+        />
+      );
+    } else {
+      // Fallback avec les initiales de l'opérateur dans un cercle
+      const initials = operator.charAt(0).toUpperCase();
+      return (
+        <div className="bg-primary/10 text-primary mr-2 flex h-6 w-6 items-center justify-center rounded-full">
+          <span className="text-xs font-bold">{initials}</span>
+        </div>
+      );
+    }
+  };
+
   if (loading) {
     return (
       <div className="flex h-64 items-center justify-center">
@@ -121,6 +155,7 @@ export function UssdAccordionList() {
             <AccordionItem key={operator} value={operator}>
               <AccordionTrigger className="font-medium">
                 <div className="flex items-center">
+                  {renderOperatorLogo(operator)}
                   <span>{operator}</span>
                   <Badge variant="outline" className="ml-2">
                     {codes.length}
@@ -130,20 +165,26 @@ export function UssdAccordionList() {
               <AccordionContent>
                 <div className="grid gap-4">
                   {codes.map((code) => (
-                    <Card key={code.codeUSSD} className="overflow-hidden">
-                      <CardHeader className="bg-muted/30 py-3">
+                    <Card
+                      key={code.codeUSSD}
+                      className="bg-muted text-foreground overflow-hidden"
+                    >
+                      <CardHeader>
                         <div className="flex items-center justify-between">
-                          <CardTitle className="font-medium">
-                            {code.service}
-                          </CardTitle>
+                          <div className="flex items-center">
+                            {renderOperatorLogo(operator)}
+                            <CardTitle className="font-medium">
+                              {code.service}
+                            </CardTitle>
+                          </div>
                           <Badge
                             variant={
                               code.statut === 'Actif' ? 'default' : 'outline'
                             }
                             className={
                               code.statut === 'Actif'
-                                ? 'bg-green-500'
-                                : 'text-yellow-600'
+                                ? 'bg-primary'
+                                : 'text-accent'
                             }
                           >
                             {code.statut}
