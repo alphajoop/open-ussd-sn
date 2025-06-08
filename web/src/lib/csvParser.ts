@@ -1,7 +1,7 @@
 import type { UssdCode } from '@/types/ussd';
 
 export async function fetchAndParseCSV(): Promise<UssdCode[]> {
-  const response = await fetch('/ussd_codes_senegal.csv');
+  const response = await fetch('/data/ussd_codes_senegal.csv');
   const csvText = await response.text();
   return parseCSV(csvText);
 }
