@@ -1,18 +1,45 @@
+import path from 'node:path';
+import { copyFileSync, mkdirSync, existsSync } from 'fs';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react-swc';
-import path from 'node:path';
+import tailwindcss from '@tailwindcss/vite';
 
-// https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: '::',
-    port: 8080,
-  },
-  plugins: [react(), mode === 'development' && null].filter(Boolean),
+function copyUssdCsv() {
+  const sourcePath = path.resolve(__dirname, '../data/ussd_codes_senegal.csv');
+  const targetDir = path.resolve(__dirname, 'public/data');
+  const targetPath = path.join(targetDir, 'ussd_codes_senegal.csv');
+
+  if (!existsSync(targetDir)) {
+    mkdirSync(targetDir, { recursive: true });
+  }
+
+  copyFileSync(sourcePath, targetPath);
+  console.log(`✔ Fichier copié depuis "${sourcePath}" vers "${targetPath}"`);
+}
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    react(),
+    tailwindcss(),
+    {
+      name: 'copy-ussd-csv',
+      apply: 'build',
+      buildStart() {
+        copyUssdCsv();
+      },
+    },
+    {
+      name: 'copy-ussd-csv-dev',
+      apply: 'serve',
+      configureServer() {
+        copyUssdCsv();
+      },
+    },
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
-  publicDir: path.resolve(__dirname, '../'),
-}));
+});
