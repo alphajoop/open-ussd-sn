@@ -1,9 +1,10 @@
-import { ArrowLeft, Info } from 'lucide-react';
-import { ModeToggle } from './components/mode-toggle';
-import { Button } from './components/ui/button';
-import { UssdAccordionList } from './components/ussd-accordion-list';
-import { AboutPage } from './components/about-page';
 import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/mode-toggle';
+import { UssdAccordionList } from '@/components/ussd-accordion-list';
+import { AboutPage } from '@/components/about-page';
+import { GitHubStars } from '@/components/github-stars';
+import { ArrowLeft, Github, Info } from 'lucide-react';
 
 function App() {
   const [showAbout, setShowAbout] = useState(false);
@@ -35,8 +36,24 @@ function App() {
         {showAbout ? <AboutPage /> : <UssdAccordionList />}
       </div>
 
-      <footer className="text-muted-foreground mt-12 text-center text-sm">
-        <p>© 2025 USSD Senegal - Tous droits réservés</p>
+      <footer className="mt-12 text-center text-sm">
+        <div className="text-muted-foreground flex flex-col items-center gap-2">
+          <p>© 2025 USSD Senegal - Tous droits réservés</p>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://github.com/alphajoop/open-ussd-sn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-primary flex items-center gap-1 transition-colors"
+            >
+              <Github className="bg-muted h-6 w-6 rounded-full p-1" />
+              <span>Étoilez-nous sur GitHub</span>
+              <span className="bg-muted inline-flex items-center rounded px-2 py-0.5 text-xs font-medium">
+                <GitHubStars />
+              </span>
+            </a>
+          </div>
+        </div>
       </footer>
     </main>
   );
