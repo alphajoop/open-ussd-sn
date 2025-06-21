@@ -18,6 +18,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Loader2, Search, Phone, Info, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
+import { UssdListSkeleton } from './loading/ussd-list-skeleton';
 
 // Types pour les opérateurs
 const OPERATOR_NAMES = ['Orange', 'Free', 'Expresso', 'Wave'] as const;
@@ -111,12 +112,7 @@ export function UssdAccordionList() {
   };
 
   if (loading) {
-    return (
-      <div className="flex h-64 items-center justify-center">
-        <Loader2 className="text-primary h-8 w-8 animate-spin" />
-        <span className="ml-2">Chargement des codes USSD...</span>
-      </div>
-    );
+    return <UssdListSkeleton />;
   }
 
   if (error) {
@@ -138,7 +134,13 @@ export function UssdAccordionList() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="pl-10"
+            disabled={loading}
           />
+          {loading && (
+            <div className="absolute top-1/2 right-3 -translate-y-1/2">
+              <Loader2 className="text-muted-foreground h-4 w-4 animate-spin" />
+            </div>
+          )}
         </div>
       </div>
 
