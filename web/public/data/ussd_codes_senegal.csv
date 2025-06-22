@@ -11,6 +11,7 @@ Orange,Sénégal,Canal+ abonnement,#144#3*5*1#,N/A,Reconduction abonnement Canal
 Orange,Sénégal,Canal+ régularisation,#144#3*5*2#,N/A,Paiement régularisation Canal+,Actif,2025-05-09
 Orange,Sénégal,Envoyer de l'argent (transfert national),#144#211*num-telephone*montant#,N/A,Envoyer de l'argent via Orange Money (transfert national),Actif,2025-05-10
 Orange,Sénégal,Achat Illimix,#250#,N/A,Acheter un Illimix (Jour/ Semaine/ Mois),Actif,2025-05-11
+Orange,Sénégal,SOS Crédit,*770*montant_credit#,N/A,Service d'emprunt de credit (S.O.S credit ),Actif,2025-06-22
 Free,Sénégal,Menu principal,#150#,N/A,Accès aux services Free Money,Actif,2025-05-09
 Free,Sénégal,Achat de crédit Free,#172#,N/A,Acheter du crédit Free,Actif,2025-05-09
 Free,Sénégal,Solde crédit Free,#176#,N/A,Vérifier le solde de votre crédit,Actif,2025-05-09
@@ -20,3 +21,6 @@ Expresso,Sénégal,Solde crédit et Internet,*222#,N/A,Consulter le solde de cr�
 Expresso,Sénégal,Achat de pass Internet,*5#,N/A,Achat de forfaits Internet,Actif,2025-05-11
 Expresso,Sénégal,Portail expresso,*1111#,N/A,Portail un peu généraliste (Internet/ Programme de fidélité - teral/ Activer promo...),Actif,2025-05-11
 Expresso,Sénégal,Transfert de bonus,*9*montant*numero_beneficiaire*code_secret#,N/A,Transfére de bonus vers un autre numéro expresso,Actif,2025-05-11
+Promobile,Sénégal,Solde de crédit,#123#,N/A,Consulter le solde de crédit,Actif,2025-06-22
+Promobile,Sénégal,Suivi consommation,#1175#,N/A,"Suivre sa consommation de credit ,  internet et message ",Actif,2025-06-22
+Promobile,Sénégal,Portail des offres,#175#,N/A,Acces à l'intégralité des offres mobile de Promobile,Actif,2025-06-22
