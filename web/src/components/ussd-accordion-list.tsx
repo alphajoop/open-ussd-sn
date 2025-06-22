@@ -21,7 +21,13 @@ import { toast } from 'sonner';
 import { UssdListSkeleton } from './loading/ussd-list-skeleton';
 
 // Types pour les opérateurs
-const OPERATOR_NAMES = ['Orange', 'Free', 'Expresso', 'Wave', 'Promobile'] as const;
+const OPERATOR_NAMES = [
+  'Orange',
+  'Free',
+  'Expresso',
+  'Wave',
+  'Promobile',
+] as const;
 type OperatorName = (typeof OPERATOR_NAMES)[number];
 
 // Map des logos d'opérateurs
@@ -30,7 +36,7 @@ const operatorLogos: Record<OperatorName, string> = {
   Free: '/images/operators/yas-logo.jpg',
   Expresso: '/images/operators/expresso-logo.jpg',
   Wave: '/images/operators/wave-logo.png',
-  Promobile : '/images/operators/promobile-logo.png', 
+  Promobile: '/images/operators/promobile-logo.png',
 };
 
 export function UssdAccordionList() {
