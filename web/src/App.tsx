@@ -12,7 +12,14 @@ function App() {
   return (
     <main className="flex min-h-screen flex-col items-center p-4 md:p-24">
       <div className="mb-8 flex w-full max-w-3xl items-center justify-between">
-        <h1 className="text-2xl font-bold md:text-3xl">Codes USSD Sénégal</h1>
+        <div className="flex items-center gap-3">
+          <img
+            src="/images/logo.svg"
+            alt="Open USSD SN logo"
+            className="h-28 w-28 md:h-32 md:w-32"
+          />
+          <h1 className="text-2xl font-bold md:text-3xl">Codes USSD Sénégal</h1>
+        </div>
         <div className="flex items-center gap-2">
           <Button
             variant="outline"
