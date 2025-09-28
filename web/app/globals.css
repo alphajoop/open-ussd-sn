@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --font-poppins: var(--font-poppins);
+  --font-inter: var(--font-inter);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -115,19 +117,19 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
   }
   button,
   [role='button'] {
     cursor: pointer;
   }
   h1 {
-    @apply text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
+    @apply font-poppins text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl;
     line-height: 1.2;
   }
 
   h2 {
-    @apply text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
+    @apply font-poppins text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl;
     line-height: 1.3;
   }
 

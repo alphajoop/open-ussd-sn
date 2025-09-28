@@ -1,3 +1,4 @@
+'use client';
 import { useState } from 'react';
 import { useUssdCodes } from '@/hooks/useUssdCodes';
 import {
@@ -19,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Loader2, Search, Phone, Info, Copy, Check } from 'lucide-react';
 import { toast } from 'sonner';
 import { UssdListSkeleton } from './loading/ussd-list-skeleton';
+import Image from 'next/image';
 
 // Types pour les opérateurs
 const OPERATOR_NAMES = [
@@ -101,11 +103,14 @@ export function UssdAccordionList() {
 
     if (validOperator && operatorLogos[operator as OperatorName]) {
       return (
-        <img
-          src={operatorLogos[operator as OperatorName]}
-          alt={`Logo ${operator}`}
-          className="mr-2 h-8 w-8 rounded-full object-cover"
-        />
+        <div className="relative mr-2 h-8 w-8">
+          <Image
+            src={operatorLogos[operator as OperatorName]}
+            alt={`Logo ${operator}`}
+            className="rounded-full object-cover"
+            fill
+          />
+        </div>
       );
     } else {
       // Fallback avec les initiales de l'opérateur dans un cercle
@@ -162,7 +167,7 @@ export function UssdAccordionList() {
         <Accordion type="single" collapsible className="w-full">
           {filteredData.map(({ operator, codes }) => (
             <AccordionItem key={operator} value={operator}>
-              <AccordionTrigger className="font-medium">
+              <AccordionTrigger className="font-medium hover:no-underline">
                 <div className="flex items-center">
                   {renderOperatorLogo(operator)}
                   <span>{operator}</span>

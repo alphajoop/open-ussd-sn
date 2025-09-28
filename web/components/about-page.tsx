@@ -8,13 +8,13 @@ export function AboutPage() {
       </CardHeader>
       <CardContent>
         <p className="text-muted-foreground mb-6">
-          Informations sur l'utilisation et la signification des codes USSD
+          Informations sur l&apos;utilisation et la signification des codes USSD
         </p>
 
         <div className="space-y-8">
           <section>
             <h2 className="mb-3 text-xl font-semibold">
-              Qu'est-ce qu'un code USSD?
+              Qu&apos;est-ce qu&apos;un code USSD?
             </h2>
             <p className="text-muted-foreground">
               USSD (Unstructured Supplementary Service Data) est un protocole de
@@ -34,8 +34,8 @@ export function AboutPage() {
               Pour utiliser un code USSD, composez simplement le code sur votre
               téléphone comme si vous alliez passer un appel. Les codes
               commencent généralement par * ou # et se terminent par #. Après
-              avoir composé le code, appuyez sur la touche d'appel, et un menu
-              ou une réponse apparaîtra sur votre écran.
+              avoir composé le code, appuyez sur la touche d&apos;appel, et un
+              menu ou une réponse apparaîtra sur votre écran.
             </p>
             <div className="bg-muted rounded-lg p-4">
               <p className="font-mono text-sm">Exemple: *123#</p>
@@ -53,7 +53,9 @@ export function AboutPage() {
               </li>
               <li className="flex items-center">
                 <span className="mr-2">•</span>
-                <span>Transfert d'argent (services financiers mobiles)</span>
+                <span>
+                  Transfert d&apos;argent (services financiers mobiles)
+                </span>
               </li>
               <li className="flex items-center">
                 <span className="mr-2">•</span>
