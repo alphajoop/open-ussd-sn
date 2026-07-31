@@ -4,8 +4,8 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/validateUssdCsv.js && node scripts/copyUssdCsv.js",
-    "dev": "node scripts/copyUssdCsv.js && next dev --turbopack",
+    "prebuild": "node scripts/validateUssdCsv.js && node scripts/generateUssdData.js",
+    "dev": "node scripts/generateUssdData.js && next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",

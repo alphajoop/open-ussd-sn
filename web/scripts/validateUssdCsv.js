@@ -1,6 +1,7 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { parseCsv } from './lib/parseCsv.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CSV_PATH = resolve(__dirname, '../../data/ussd_codes_senegal.csv');
@@ -19,83 +20,6 @@ const EXPECTED_HEADERS = [
 const VALID_STATUTS = new Set(['Actif', 'Obsolète', 'À confirmer']);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const USSD_RE = /^[*#][\d*#A-Za-z_-]+#$/;
-
-/**
- * Parse CSV text (RFC 4180) — mirrors web/lib/parseCsv.ts
- */
-function parseCsv(text) {
-  const input = text.replace(/^\uFEFF/, '');
-  const rows = [];
-  let row = [];
-  let field = '';
-  let inQuotes = false;
-  let i = 0;
-
-  const pushField = () => {
-    row.push(field.trim());
-    field = '';
-  };
-
-  const pushRow = () => {
-    pushField();
-    if (row.some((cell) => cell !== '')) {
-      rows.push(row);
-    }
-    row = [];
-  };
-
-  while (i < input.length) {
-    const char = input[i];
-
-    if (inQuotes) {
-      if (char === '"') {
-        if (input[i + 1] === '"') {
-          field += '"';
-          i += 2;
-          continue;
-        }
-        inQuotes = false;
-        i += 1;
-        continue;
-      }
-      field += char;
-      i += 1;
-      continue;
-    }
-
-    if (char === '"') {
-      inQuotes = true;
-      i += 1;
-      continue;
-    }
-
-    if (char === ',') {
-      pushField();
-      i += 1;
-      continue;
-    }
-
-    if (char === '\n') {
-      pushRow();
-      i += 1;
-      continue;
-    }
-
-    if (char === '\r') {
-      i += 1;
-      continue;
-    }
-
-    field += char;
-    i += 1;
-  }
-
-  if (field.length > 0 || row.length > 0) {
-    pushRow();
-  }
-
-  return rows;
-}
 
 function validate() {
   const errors = [];

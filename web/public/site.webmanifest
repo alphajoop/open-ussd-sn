@@ -1,6 +1,8 @@
 {
   "name": "Codes USSD Sénégal",
   "short_name": "Codes USSD Sénégal",
+  "lang": "fr",
+  "start_url": "/",
   "icons": [
     {
       "src": "images/logo.svg",
