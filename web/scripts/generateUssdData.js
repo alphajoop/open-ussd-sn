@@ -7,36 +7,9 @@ import {
   readFileSync,
   writeFileSync,
 } from 'node:fs';
-import { parseCsv } from './lib/parseCsv.mjs';
+import { parseUssdCsv } from './lib/ussdCsv.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
-const VALID_STATUTS = new Set(['Actif', 'Obsolète', 'À confirmer']);
-
-function rowsToJson(rows) {
-  const [headerRow, ...dataRows] = rows;
-  const headers = headerRow.map((h) => h.trim().toLowerCase());
-
-  return dataRows.map((values) => {
-    const raw = Object.fromEntries(
-      headers.map((header, i) => [header, values[i] ?? '']),
-    );
-    const statut = VALID_STATUTS.has(raw['statut'])
-      ? raw['statut']
-      : 'À confirmer';
-
-    return {
-      opérateur: raw['opérateur'] ?? '',
-      pays: raw['pays'] ?? '',
-      service: raw['service'] ?? '',
-      codeUSSD: raw['code ussd'] ?? '',
-      syntaxe: raw['syntaxe'] ?? '',
-      description: raw['description'] ?? '',
-      statut,
-      derniereMiseAJour: raw['dernière mise à jour'] ?? '',
-    };
-  });
-}
 
 function generateUssdData() {
   const sourcePath = resolve(__dirname, '../../data/ussd_codes_senegal.csv');
@@ -52,7 +25,7 @@ function generateUssdData() {
   console.log(`✔ CSV copié vers "${targetCsv}"`);
 
   const csvText = readFileSync(sourcePath, 'utf8');
-  const codes = rowsToJson(parseCsv(csvText));
+  const codes = parseUssdCsv(csvText);
   writeFileSync(targetJson, `${JSON.stringify(codes, null, 2)}\n`, 'utf8');
   console.log(`✔ JSON généré (${codes.length} codes) → "${targetJson}"`);
 }

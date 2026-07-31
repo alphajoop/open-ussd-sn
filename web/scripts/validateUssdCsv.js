@@ -1,23 +1,16 @@
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { parseCsv } from './lib/parseCsv.mjs';
+import {
+  parseCsv,
+  EXPECTED_HEADERS,
+  USSD_STATUTS,
+} from './lib/ussdCsv.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CSV_PATH = resolve(__dirname, '../../data/ussd_codes_senegal.csv');
 
-const EXPECTED_HEADERS = [
-  'Opérateur',
-  'Pays',
-  'Service',
-  'Code USSD',
-  'Syntaxe',
-  'Description',
-  'Statut',
-  'Dernière mise à jour',
-];
-
-const VALID_STATUTS = new Set(['Actif', 'Obsolète', 'À confirmer']);
+const VALID_STATUTS = new Set(USSD_STATUTS);
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 const USSD_RE = /^[*#][\d*#A-Za-z_-]+#$/;
 
