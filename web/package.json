@@ -4,11 +4,12 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/copyUssdCsv.js",
+    "prebuild": "node scripts/validateUssdCsv.js && node scripts/copyUssdCsv.js",
     "dev": "node scripts/copyUssdCsv.js && next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "validate:csv": "node scripts/validateUssdCsv.js",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

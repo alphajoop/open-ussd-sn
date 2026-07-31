@@ -180,7 +180,7 @@ export function UssdAccordionList() {
                 <div className="grid gap-4">
                   {codes.map((code) => (
                     <Card
-                      key={code.codeUSSD}
+                      key={`${operator}-${code.codeUSSD}-${code.service}`}
                       className="bg-muted text-foreground overflow-hidden"
                     >
                       <CardHeader>
@@ -206,9 +206,7 @@ export function UssdAccordionList() {
                         </div>
                         <CardDescription className="mt-1 text-xs">
                           Dernière mise à jour:{' '}
-                          {code.dernièremiseàjour ||
-                            code['dernière mise à jour'] ||
-                            'Non spécifiée'}
+                          {code.derniereMiseAJour || 'Non spécifiée'}
                         </CardDescription>
                       </CardHeader>
                       <CardContent className="pt-4">

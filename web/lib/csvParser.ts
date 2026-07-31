@@ -1,54 +1,71 @@
-import type { UssdCode } from '@/types/ussd';
+import type { UssdCode, UssdStatut } from '@/types/ussd';
+import { USSD_STATUTS } from '@/types/ussd';
+import { parseCsv } from '@/lib/parseCsv';
 
-export async function fetchAndParseCSV(): Promise<UssdCode[]> {
-  const response = await fetch('/data/ussd_codes_senegal.csv');
-  const csvText = await response.text();
-  return parseCSV(csvText);
+const HEADER_MAP: Record<string, keyof UssdCode> = {
+  opérateur: 'opérateur',
+  pays: 'pays',
+  service: 'service',
+  'code ussd': 'codeUSSD',
+  codeussd: 'codeUSSD',
+  syntaxe: 'syntaxe',
+  description: 'description',
+  statut: 'statut',
+  'dernière mise à jour': 'derniereMiseAJour',
+  dernièremiseàjour: 'derniereMiseAJour',
+  derniermiseajour: 'derniereMiseAJour',
+};
+
+function normalizeHeader(header: string): keyof UssdCode | undefined {
+  const key = header.trim().toLowerCase();
+  return HEADER_MAP[key];
 }
 
-function parseCSV(csvText: string): UssdCode[] {
-  const lines = csvText.trim().split('\n');
-  const headers = lines[0].split(',').map((h) => h.trim());
+function isValidStatut(value: string): value is UssdStatut {
+  return (USSD_STATUTS as readonly string[]).includes(value);
+}
 
-  // Debug: Log the normalized headers
-  const normalizedHeaders = headers.map(normalizeKey);
-  console.log('Normalized headers:', normalizedHeaders);
+export function parseCSV(csvText: string): UssdCode[] {
+  const rows = parseCsv(csvText);
+  if (rows.length === 0) {
+    return [];
+  }
 
-  return lines.slice(1).map((line) => {
-    const values = line.split(',').map((v) => v.trim());
+  const [headerRow, ...dataRows] = rows;
+  const keys = headerRow.map(normalizeHeader);
+
+  return dataRows.map((values) => {
     const entry: Partial<UssdCode> = {};
 
-    headers.forEach((header, i) => {
-      const key = normalizeKey(header);
-      const value = values[i];
+    keys.forEach((key, index) => {
+      if (!key) return;
+      const value = values[index] ?? '';
 
       if (key === 'statut') {
-        if (['Actif', 'Obsolète', 'À confirmer'].includes(value)) {
-          entry[key] = value as UssdCode['statut'];
-        } else {
-          entry[key] = undefined;
-        }
+        entry.statut = isValidStatut(value) ? value : undefined;
       } else {
         entry[key] = value;
       }
     });
 
-    return entry as UssdCode;
+    return {
+      opérateur: entry.opérateur ?? '',
+      pays: entry.pays ?? '',
+      service: entry.service ?? '',
+      codeUSSD: entry.codeUSSD ?? '',
+      syntaxe: entry.syntaxe ?? '',
+      description: entry.description ?? '',
+      statut: entry.statut ?? 'À confirmer',
+      derniereMiseAJour: entry.derniereMiseAJour ?? '',
+    };
   });
 }
 
-// Optionnel : adapter les noms de colonnes CSV aux noms du type UssdCode
-function normalizeKey(key: string): keyof UssdCode {
-  // Convert to lowercase and handle special cases
-  const normalized = key.toLowerCase().replace(/code ussd/i, 'codeussd');
-
-  // Handle specific mappings
-  if (normalized === 'dernière mise à jour') {
-    return 'dernièremiseàjour' as keyof UssdCode;
+export async function fetchAndParseCSV(): Promise<UssdCode[]> {
+  const response = await fetch('/data/ussd_codes_senegal.csv');
+  if (!response.ok) {
+    throw new Error(`Impossible de charger le CSV (${response.status})`);
   }
-
-  // Remove spaces for other keys
-  return normalized
-    .replace(/ /g, '')
-    .replace('codeussd', 'codeUSSD') as keyof UssdCode;
+  const csvText = await response.text();
+  return parseCSV(csvText);
 }

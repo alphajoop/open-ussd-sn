@@ -1,3 +1,7 @@
+export const USSD_STATUTS = ['Actif', 'Obsolète', 'À confirmer'] as const;
+
+export type UssdStatut = (typeof USSD_STATUTS)[number];
+
 export type UssdCode = {
   opérateur: string;
   pays: string;
@@ -5,8 +9,6 @@ export type UssdCode = {
   codeUSSD: string;
   syntaxe: string;
   description: string;
-  statut: 'Actif' | 'Obsolète' | 'À confirmer';
-  dernièremiseàjour?: string;
-  dernièreMiseÀJour?: string;
-  'dernière mise à jour'?: string;
+  statut: UssdStatut;
+  derniereMiseAJour: string;
 };
