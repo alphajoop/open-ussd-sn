@@ -60,12 +60,3 @@ export function parseCSV(csvText: string): UssdCode[] {
     };
   });
 }
-
-export async function fetchAndParseCSV(): Promise<UssdCode[]> {
-  const response = await fetch('/data/ussd_codes_senegal.csv');
-  if (!response.ok) {
-    throw new Error(`Impossible de charger le CSV (${response.status})`);
-  }
-  const csvText = await response.text();
-  return parseCSV(csvText);
-}
