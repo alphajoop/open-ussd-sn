@@ -24,12 +24,12 @@ Orange,Sénégal,Consulter le coût et la durée du dernier appel émis,#123##,N
 Free,Sénégal,Menu principal,#150#,N/A,Accès aux services Free Money,Actif,2025-05-09
 Free,Sénégal,Achat de crédit Free,#172#,N/A,Acheter du crédit Free,Actif,2025-05-09
 Free,Sénégal,Solde crédit Free,#176#,N/A,Vérifier le solde de votre crédit,Actif,2025-05-09
-Free,Sénégal,Solde principal (détaillé),#101#221#,N/A,Vérifier le solde principal via menu détaillé,Actif,2026-07-26
-Free,Sénégal,Solde bonus,#101#222#,N/A,Vérifier le solde bonus,Actif,2026-07-26
-Free,Sénégal,Solde internet/4G,#101#223#,N/A,Vérifier le solde des forfaits internet/4G,Actif,2026-07-26
+Free,Sénégal,Solde principal (détaillé),#101#221#,#101# puis 221#,Vérifier le solde principal via menu détaillé,Actif,2026-07-26
+Free,Sénégal,Solde bonus,#101#222#,#101# puis 222#,Vérifier le solde bonus,Actif,2026-07-26
+Free,Sénégal,Solde internet/4G,#101#223#,#101# puis 223#,Vérifier le solde des forfaits internet/4G,Actif,2026-07-26
 Free,Sénégal,Pass Internet journalier (Yas),#100#,N/A,Achat de pass internet journalier,Actif,2026-07-26
 Free,Sénégal,Achat Illimax (Yas),#155#,N/A,Achat de forfaits Illimax (Internet + Appels + SMS),Actif,2026-07-26
-Free,Sénégal,Forfaits internationaux/roaming (Yas),#155*5#,N/A,Souscription forfaits internationaux (CEDEAO, Maroc, Mauritanie, Gambie…),Actif,2026-07-26
+Free,Sénégal,Forfaits internationaux/roaming (Yas),#155*5#,N/A,Souscription forfaits internationaux (CEDEAO/Maroc/Mauritanie/Gambie),Actif,2026-07-26
 Free,Sénégal,Lebalma crédit (Yas),#188#,N/A,Emprunt de crédit d'urgence — remboursé à la prochaine recharge + frais,Actif,2026-07-26
 Wave,Sénégal,Menu principal (via Orange/Free),#2171#,N/A,Accès Wave via Orange / Free,Actif,2025-05-09
 Expresso,Sénégal,Solde crédit et Internet,*222#,N/A,Consulter le solde de crédit et internet,Actif,2025-05-11
